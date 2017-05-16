@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{height: 100%;}
+        body {
+            font-size: 14px;
+            background:#fff2e3;
+            text-align: center;
+        }
+        ul li{ list-style: none;}
+        a{text-decoration: none}
+        .container{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .header{
+            text-align: center;
+            color: #87968e;
+        }
+        .header h1{
+            font-size: 42px;
+        }
+        .header p {
+          font-size: 14px;
+            opacity: 0.8;
+        }
+        .pro-list {
+            margin: 20px 0;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+        .pro-list li {
+         display: inline-block;
+        }
+        .pro-list a{
+            padding: 5px 15px;
+            background: #38B774;
+            color: #fff;
+            border-radius: 3px;
+            margin-right: 20px;
+        }
+        .pro-list a:hover,
+        .current {
+            opacity: 0.5;
+        }
+        .btn-wrap{
+            margin: 30px 0;
+        }
+        .btn {
+            padding: 5px 15px;
+            background: #38B774;
+            color: #fff;
+            border-radius: 3px;
+            opacity: .8;
+        }
+        .btn:hover{opacity: .6}
+        .c1{color: #009246;}
+    </style>
+</head>
+<body>
+      <div class="container">
+          <section class="header">
+              <h1>我的项目</h1>
+              <p>这是我的第一个项目</p>
+          </section>
+          <section class="main">
+               <ul class="pro-list">
+                   <li><a href="javascript:;" class="current">项目一</a></li>
+                   <li><a href="javascript:;">项目二</a></li>
+                   <li><a href="javascript:;">项目三</a></li>
+                   <li><a href="javascript:;">项目四</a></li>
+                   <li><a href="javascript:;">项目五</a></li>
+               </ul>
+               <div>
+                   <img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/65d4aba2-a097-4b24-aaa0-ebbaf7eedab2" alt="">
+               </div>
+              <div class="btn-wrap">
+                  <a href="javascript:;" class="btn">查看源码</a>
+                  <a href="javascript:;" class="btn">使用说明</a>
+              </div>
+          </section>
+          <section class="footer">
+             <p>作者：<span class="c1">lll</span></p>
+          </section>
+      </div>
+</body>
+</html>

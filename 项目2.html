@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 294374 */
+            src: url('//at.alicdn.com/t/font_e2ff3dmlhip2pgb9.eot');
+            src: url('//at.alicdn.com/t/font_e2ff3dmlhip2pgb9.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_e2ff3dmlhip2pgb9.woff') format('woff'),
+            url('//at.alicdn.com/t/font_e2ff3dmlhip2pgb9.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_e2ff3dmlhip2pgb9.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:18px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;}
+       *{
+           padding: 0;
+           margin: 0;
+       }
+        ul li{ list-style: none;}
+        a{text-decoration: none}
+        .fl{float: left}
+        .fr {float: right}
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .clearfix { *zoom:1;}
+        .container {
+            width: 900px;
+            margin: 30px auto;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+        }
+        .container h2{
+            width: 350px;
+            border-bottom: 2px solid #87968e;
+            line-height: 2;
+        }
+        .info {
+            padding: 50px;
+            color: #333;
+        }
+        .name img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .name span {
+            margin-left: 20px;
+            font-size: 32px;
+            vertical-align: middle;
+        }
+        .info-detail h2{
+           border-bottom: 5px solid ;
+        }
+        .info-detail p{
+            line-height: 2;
+        }
+        .info-detail .icon{
+            display: inline-block;
+            margin-right: 10px;
+            width:15px;
+            height: 15px;
+        }
+        .experience
+        {
+            padding: 0 50px;
+            line-height: 1.5;
+        }
+        .exp-content {
+            position: relative;
+            padding: 20px 0 0 60px;
+        }
+        .exp-content:before {
+            content: '';
+            width: 2px;
+            background-color: #b7b7b7;
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            height: 90%;
+            bottom: 0;
+        }
+        .exp-content:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 28px;
+            left: 10px;
+        }
+        .exp-content:last-child:before{
+            height: 60%;
+        }
+        .exp-content h3{
+            font-weight: 400;
+        }
+        .exp-content span,
+        .education p:first-of-type
+        {
+            color: #87968e;
+        }
+        .education {
+            margin: 20px 0;
+        }
+        .activity,
+        .skill{
+            padding:0 0 50px 50px;
+            width: 40%;
+        }
+        .icon-yuan {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: -6px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            text-align: center;
+            border: 1px solid;
+        }
+        .activity>div{
+            position: relative;
+            padding:20px 0 0 50px;
+        }
+        .skill {
+            line-height: 50px;
+        }
+        .skill span{
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <section class="info clearfix">
+           <div class="name fl">
+               <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1494468974&di=2e4f9d00610a1787632e8e6d9cbafc54&src=http://img1.7wenta.com/upload/qa_headIcons/20150212/14237418269486667.jpg" alt="">
+               <span>姓名:小丸子</span>
+           </div>
+           <div class="info-detail fr">
+               <h2>个人信息</h2>
+               <p><i class="iconfont icon">&#xe6a2;</i>广东省深圳市福田区上梅林</p>
+               <p><i class="iconfont icon">&#xe62a;</i>13101010101</p>
+               <p><i class="iconfont icon">&#xe606;</i>544204633@qq.com</p>
+               <p><i class="iconfont icon">&#xe606;</i>github.com/xiaojiongtu</p>
+           </div>
+       </section>
+       <section class="experience">
+           <h2>工作经验</h2>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+       </section>
+       <section class="education experience">
+           <h2>教育背景</h2>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Electronics</p>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Electronics</p>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+           <div class="exp-content">
+               <h3>Compal Electronics Technology/ <span>2011-2012</span></h3>
+               <p>Electronics</p>
+               <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust antenna to meet request. Test and analyze antenna and other RF chip/module of DUT.</p>
+           </div>
+       </section>
+       <section class="skills clearfix">
+            <div class="activity fl">
+                <h2>社会活动</h2>
+                <div>
+                    <i class="icon-yuan">+</i>
+                    <span>virtually</span>
+                    <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust.</p>
+                </div>
+                <div>
+                    <i class="icon-yuan">+</i>
+                    <span>virtually</span>
+                    <p>Key in customer's requirement and working with PM to define the design target. Co-work with vendor/customer to adjust.</p>
+                </div>
+            </div>
+            <div class="skill fl">
+                <h2>专业技能</h2>
+                <div>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>HTML&CSS</span>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>JQUERY</span>
+                </div>
+                <div>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>JAVASCRIPT</span>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>PHOTOSHOP</span>
+                </div>
+                <div>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>PHP</span>
+                    <i class="iconfont icon">&#xe6a2;</i>
+                    <span>JAVA</span>
+                </div>
+            </div>
+       </section>
+   </div>
+</body>
+</html>

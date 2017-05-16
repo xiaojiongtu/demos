@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_vap6zur0mk46ajor.css">
+    <style>
+        ul li{ list-style: none;}
+        a{text-decoration: none}
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:60px;
+            font-style:normal;
+            color:#fed136;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;}
+        *{
+            padding:0;
+            margin: 0;
+        }
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;;
+            font-size: 14px;
+        }
+         .container {
+             width: 1100px;
+             margin: 0 auto;
+         }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        nav {background: rgba(0,0,0,.8);}
+        nav i,
+        .navbar li
+        {
+            float: left;
+        }
+        .navbar {
+            float: right;
+            padding: 5px 0;
+        }
+        .navbar li a{
+            display: inline-block;
+            width: 80px;
+            padding: 10px 15px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;;
+            text-align: center;
+            color: #fff;
+            border-radius: 3px;
+        }
+        .navbar li a:hover{background-color:#fed136}
+        #header {
+            position: relative;
+            padding: 250px 0;
+            background:url("https://images.apple.com/v/macbook/e/overview/images/hero_static_large.jpg") center center no-repeat ;
+            background-size: cover;
+            text-align: center;
+        }
+       #header h1,
+       #about h1,
+       #design h1,
+       #contract h1
+       {
+           margin-bottom: 10px;
+           font-size: 75px;
+           color: #333;
+       }
+        #header p {
+            font-size: 40px;
+        }
+        #header .buy{
+            display: inline-block;
+            padding: 15px 40px;
+            margin-top: 40px;
+            font-size: 30px;
+            border-radius: 5px;
+            background: rgba(254,209,52,.8);
+            color: #fff;
+        }
+       #header .buy:hover{background:rgba(254,209,52,.9) }
+        #mac{
+            padding: 100px;
+            text-align: center;
+        }
+        #mac h2,
+        #macos h2
+        {
+            margin-bottom: 15px;
+            font-size: 60px;
+            color: #333;
+        }
+        #mac h3,
+        #macos h3
+        {
+            font-size: 20px;
+            color: #777;
+            margin-bottom: 60px;
+        }
+        .model {
+            margin-right: -10px;
+        }
+        .model>li{
+            float: left;
+            margin-right: 10px;
+            padding: 30px 20px;
+            width: 320px;
+
+        }
+        .model>li:hover{
+            box-shadow:  0 2px 7px 0 rgba(0,0,0,.4);
+        }
+        .model img{
+            display: inline-block;
+            width: 275px;
+            height: 130px;
+        }
+        .model .type{
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        .model .type-des{
+            font-size: 14px;
+            color: #777;
+        }
+        #macos{
+            background: #f4f4f4;
+            padding: 150px 0;
+            text-align: center;
+        }
+        .func-list{margin-left: -20px;}
+        .func-list li{
+            float: left;
+            width: 346px;
+            margin:20px 0 0 20px;
+            padding-bottom:40px;
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+        }
+        .func-list img{
+            display: inline-block;
+            width: 346px;
+            height: 260px;
+        }
+        .func-list .os-link{
+            display: block;
+            position: relative;
+            height: 260px;
+            padding-bottom: 20px;
+        }
+        .link-hover{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 346px;
+            height: 260px;
+            line-height: 260px;
+           color: transparent;
+        }
+        .link-hover:hover{
+            background: rgba(0,0,0,.2);
+            color: rgba(0,0,0,.4);
+            transition: 0.4s;
+        }
+        .func-list h4{
+            font-size: 18px;
+            color: #333;
+        }
+        #about {
+            padding: 100px 0;
+        }
+        #about h1,
+        #about p{
+            text-align: center;
+        }
+        .timeline {
+            margin-top: 75px;
+        }
+        .timeline img{
+            width: 156px;
+            border: 7px solid #f7f7f7;
+            height: 156px;
+            border-radius: 50%;
+        }
+        .timeline>li{
+            position: relative;
+            text-align: center;
+            padding-bottom: 125px;
+        }
+        .timeline>li:after{
+            display: inline-block;
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -1px;
+            border-left: 2px solid #ddd;
+            height: 100%;
+            z-index: -1;
+        }
+        .timeline>li:last-child{
+            padding-bottom: 0;
+        }
+        .timeline  .text-des{
+            position: absolute;
+            right: 50%;
+            top: 0;
+            margin-right: 125px;
+            text-align: right;
+            width: 30em;
+        }
+        .timeline>li:nth-child(even) > .text-des{
+            left: 50%;
+            margin-left: 125px;
+            text-align: left;
+        }
+        .text-des time{
+            font-size: 18px;
+            color: #333;
+            font-weight: 700;
+        }
+        #design {
+            text-align: center;
+            padding: 125px 0;
+        }
+        #design  h3 ,
+        #contract h3
+        {
+            margin-bottom: 75px;
+            font-size: 16px;
+            font-style: italic;
+            color: #777;
+        }
+        .design-list {
+            float: left;
+            width: 360px;
+            margin-right: 10px;
+        }
+        #design{
+            background: #f7f7f7;
+        }
+        #design .wrap {
+            margin-right: -10px;
+        }
+        .design-list i{
+            display: inline-block;
+            width: 239px;
+            height: 239px;
+            line-height: 239px;
+            border-radius: 50%;
+            font-size: 100px;
+            background: rgba(254,209,52,.3);
+
+        }
+        .design-list h4{
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        .design-list p{
+            color: #777;
+            line-height: 1.5;
+        }
+        .social-buttons{
+            margin-top: 10px;
+            text-align: center;
+        }
+       .social-buttons li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+      .social-buttons span{
+            font-size: 35px;
+            color: #252947;
+        }
+        .social-buttons span:hover{
+            color:#fed136 ;
+        }
+        #contract {
+            padding: 100px 0;
+            background: url("https://images.apple.com/v/mac/home/v/images/home/education_large.jpg") no-repeat center;
+            background-size: cover;
+            text-align: center;
+        }
+        #contract h3 {
+            color: #333;
+        }
+       #contract .form-group{
+           float: left;
+           margin-right: 20px;
+           padding: 0 10px;
+           width: 525px;
+           box-sizing: border-box;
+       }
+        .form-group .form-control{
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+        .form-group .form-text{width: 100%;}
+        .form-submit{
+            width: 100%;
+            text-align: center;
+        }
+        .btn{
+            padding: 15px 40px;
+            background:#fed136;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 0;
+        }
+        footer{
+            padding: 50px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="clearfix">
+        <div class="container">
+            <i class="iconfont icon-pingguo"></i>
+            <ul class="navbar">
+                <li><a href="#mac">mac</a></li>
+                <li><a href="#macos">macOS</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#design">design</a></li>
+                <li><a href="#contract">contract</a></li>
+            </ul>
+        </div>
+    </nav>
+<section id="header">
+    <div class="container">
+        <div class="mac-des">
+            <h1>MacBook Pro</h1>
+            <p>一身才华，一触，即发。</p>
+            <a href="#" class="buy">立即购买</a>
+        </div>
+    </div>
+</section>
+<section id="mac" name="mac">
+    <div class="container">
+        <h2>mac</h2>
+        <h3>mac 机型比较。找到适合你的mac</h3>
+        <ul class="model clearfix">
+            <li>
+                <a href="#">
+                    <img src="https://images.apple.com/cn/mac/compare/images/product_macbook_opt_large.png" alt="">
+               </a>
+                <h4 class="type">MacBook Air (12 英寸)</h4>
+                <p class="type-des">12 英寸 (对角线) LED 背光 Retina 显示屏1.1GHz 双核 Intel Core m3、1.2GHz 双核 Intel Core m5 或 1.3GHz 双核 Intel Core m7 处理器Turbo Boost 最高可达 3.1GHz最长可达 10 小时的电池使用时间最高可达 512GB 固态硬盘2Force Touch 触控板0.92 千克 (2.03 磅)</p>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://images.apple.com/cn/mac/compare/images/product_macbook_air_13_large.png" alt="">
+                </a>
+                <h4 class="type">MacBook Air (12 英寸)</h4>
+                <p class="type-des">12 英寸 (对角线) LED 背光 Retina 显示屏1.1GHz 双核 Intel Core m3、1.2GHz 双核 Intel Core m5 或 1.3GHz 双核 Intel Core m7 处理器Turbo Boost 最高可达 3.1GHz最长可达 10 小时的电池使用时间最高可达 512GB 固态硬盘2Force Touch 触控板0.92 千克 (2.03 磅)</p>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://images.apple.com/cn/mac/compare/images/product_macbook_pro_2015_13_large.png" alt="">
+                </a>
+                <h4 class="type">MacBook Air (12 英寸)</h4>
+                <p class="type-des">12 英寸 (对角线) LED 背光 Retina 显示屏1.1GHz 双核 Intel Core m3、1.2GHz 双核 Intel Core m5 或 1.3GHz 双核 Intel Core m7 处理器Turbo Boost 最高可达 3.1GHz最长可达 10 小时的电池使用时间最高可达 512GB 固态硬盘2Force Touch 触控板0.92 千克 (2.03 磅)</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="macos" name="macos">
+    <div class="container">
+        <h2>macOS</h2>
+        <h3>正是它，让 Mac 如此与众不同。</h3>
+        <ul class="func-list clearfix">
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/v/mac/shared/macos/a/images/macos/universal_clipboard_large.jpg" alt="">
+                </a>
+               <h4>通用剪貼簿</h4>
+                <p></p>
+            </li>
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/v/mac/shared/macos/a/images/macos/auto_unlock_large.jpg" alt="">
+                </a>
+                <h4>自动解锁</h4>
+                <p></p>
+            </li>
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/hk/mac/shared/macos/images/calls_large.jpg" alt="">
+                </a>
+                <h4>通话及通讯</h4>
+                <p></p>
+            </li>
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/v/mac/shared/macos/a/images/macos/handoff_large.jpg" alt="">
+                </a>
+                <h4>Handoff</h4>
+                <p></p>
+            </li>
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/v/mac/shared/macos/a/images/macos/airdrop_large.jpg" alt="">
+                </a>
+                <h4>AirDrop</h4>
+                <p></p>
+            </li>
+            <li>
+                <a href="" class="os-link">
+                    <i class="iconfont icon-jiayuanshixin link-hover"></i>
+                    <img src="https://images.apple.com/hk/mac/shared/macos/images/hotspot_large.jpg" alt="">
+                </a>
+                <h4>Instant Hotspot</h4>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="about" name="about">
+    <div class="container">
+      <h1>about</h1>
+        <p>Lorem ipsum dolor sit amet consectetur</p>
+        <ul class="timeline">
+            <li>
+                <img src="http://img1.gtimg.com/digi/pics/hv1/101/145/2011/130802351.png" alt="">
+                <div  class="text-des">
+                    <time>1998</time>
+                    <h3>iMac G3</h3>
+                    <p>作为苹果的精神领袖，乔布斯的回归果然没有令人失望，iMac G3不仅成为日后Mac的代表产品，也开创了另一种台式电脑的设计形式。它采用一体机设计，内置15英寸CRT显示器、PowerPC G3处理器等强大硬件，并率先使用CD-ROM光驱取代软驱、内置USB接口、搭配全新设计的鼠标和键盘。iMac G3在未来数年衍生了多个型号，并成为一种文化现象，深受艺术家、设计师等群体喜爱。</p>
+                </div>
+            </li>
+            <li>
+                <img src="http://img1.gtimg.com/digi/pics/hv1/149/145/2011/130802399.png" alt="">
+                <div  class="text-des">
+                    <time>2002</time>
+                    <h3>iMac G4</h3>
+                    <p>iMac G4无疑又是Mac历史上的一款杰作，尤其是精湛的设计堪称经典。悬浮式的超薄液晶屏幕可以方便条件角度，更是在CRT显示器流行时期特立独行，彰显了苹果主张新技术、充满前瞻性的价值观。</p>
+                </div>
+            </li>
+            <li>
+                <img src="http://img1.gtimg.com/digi/pics/hv1/101/145/2011/130802351.png" alt="">
+                <div  class="text-des">
+                    <time>1998</time>
+                    <h3>iMac G3</h3>
+                    <p>作为苹果的精神领袖，乔布斯的回归果然没有令人失望，iMac G3不仅成为日后Mac的代表产品，也开创了另一种台式电脑的设计形式。它采用一体机设计，内置15英寸CRT显示器、PowerPC G3处理器等强大硬件，并率先使用CD-ROM光驱取代软驱、内置USB接口、搭配全新设计的鼠标和键盘。iMac G3在未来数年衍生了多个型号，并成为一种文化现象，深受艺术家、设计师等群体喜爱。</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://cdn1-techbang.pixcdn.tw/system/images/149563/original/eac154bb25947c70c0ad2508ed530d01.jpg?1390190677" alt="">
+                <div  class="text-des">
+                    <time>2006</time>
+                    <h3>Macbook</h3>
+                    <p>Macbook 則是蘋果在 2006 年推出的全新筆記型電腦，用以代替 iBook 和 Powerbook G4 系列，Macbook 當時還有黑色版本，市場上多見的還是白色版本，有些粉絲會親切地稱之為小白。在2011 年蘋果發布 OS X Lion 和新款 Macbook Air 之後，Macbook 白色款隨之停止銷售，正式意味著 Macbook 被 Macbook Pro 和 Macbook Air 細分產品線代替</p>
+                </div>
+            </li>
+            <li>
+                <img src="http://www.everymac.com/images/cpu_pictures/apple_macbook_white.jpg" alt="">
+                <div  class="text-des">
+                    <time>2008 </time>
+                    <h3>Macbook Air</h3>
+                    <p>Macbook Air 是展示蘋果絕佳設計功力的產品，由於取消了光碟機，Macbook 的輕薄一直是業界所追趕的目標。Macbook Air 在 2008 年首次推出。</p>
+                </div>
+            </li>
+            <li>
+                <img src="http://image.xinmin.cn/2012/06/16/20120616011817887719.jpg" alt="">
+                <div  class="text-des">
+                    <time>2012</time>
+                    <h3>iMac 2012</h3>
+                    <p>iMac 2012 將 Macbook Air 上的薄帶到了桌面一體機上，相比於前代機型，iMac 在設計語言上並未發生明顯變化，配置上也是按部就班升級，但是最大27 英寸的纖薄邊緣機身還是讓人難忘</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="design" name="design">
+    <div class="container">
+         <h1>design</h1>
+        <h3>Our Humble Beginnings</h3>
+        <div class="clearfix wrap">
+            <div class="design-list">
+                <i class="iconfont icon-yanjing1"></i>
+                <h4>视觉</h4>
+                <p>Vision</p>
+                <ul class="social-buttons clearfix">
+                    <li>
+                        <a href=""><span class="iconfont icon-wx"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="iconfont icon-weibo"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span  class="iconfont icon-qq"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="design-list">
+                <i class="iconfont icon-17"></i>
+                <h4>听觉</h4>
+                <p>Hearing</p>
+                <ul class="social-buttons clearfix">
+                    <li>
+                        <a href=""><span class="iconfont icon-wx"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="iconfont icon-weibo"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span  class="iconfont icon-qq"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="design-list">
+                <i class="iconfont icon-hand"></i>
+                <h4>触觉</h4>
+                <p>Tactile</p>
+                <ul class="social-buttons clearfix">
+                    <li>
+                        <a href=""><span class="iconfont icon-wx"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span class="iconfont icon-weibo"></span></a>
+                    </li>
+                    <li>
+                        <a href=""><span  class="iconfont icon-qq"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contract" name="contract">
+    <div class="container">
+        <h1>contract us</h1>
+        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+        <form action="">
+            <div class="clearfix">
+                <div class="form-group">
+                    <div>
+                        <input type="text" class="form-control" placeholder="your name">
+                    </div>
+                    <div>
+                        <input type="email"  class="form-control"  placeholder="your email">
+                    </div>
+                    <div>
+                        <input type="number"  class="form-control" placeholder="your phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="text-mess" class="form-text" cols="30" rows="14" placeholder=" your messages">
+
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-submit">
+                <input type="submit" class="btn" value="提交">
+            </div>
+        </form>
+    </div>
+</section>
+<footer>
+    <p class="version">Copyright © Your Website 2014</p>
+    <div>
+        <ul class="social-buttons clearfix">
+            <li>
+                <a href=""><span class="iconfont icon-wx"></span></a>
+            </li>
+            <li>
+                <a href=""><span class="iconfont icon-weibo"></span></a>
+            </li>
+            <li>
+                <a href=""><span  class="iconfont icon-qq"></span></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>7
