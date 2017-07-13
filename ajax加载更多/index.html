@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+             margin: 0;
+        }
+        ul li {list-style: none}
+        a{
+            text-decoration: none;
+            color: #ff00ff;
+        }
+        .outer{
+            text-align: center;
+            width: 600px;
+            margin: 0 auto;
+        }
+         .wrap>li{
+             border: 1px solid #ddd;
+             text-align: center;
+             line-height: 2;
+             margin-bottom: 10px;
+         }
+        .wrap>li:hover{
+            background: #ddd;
+        }
+        #btn{
+            display: inline-block;
+            padding: 8px 20px ;
+            color: #fff;
+            background: #0000ff;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <ul class="wrap">
+
+    </ul>
+    <a href="javascript:;" id="btn">加载更多</a>
+</div>
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+ /*
+  /!*原生方法*!/
+   var wrap=document.querySelector(".wrap");
+    var btn=document.querySelector("#btn");
+    var pageIndex=0;
+    var lock=true;//默认解锁
+    btn.addEventListener('click',function(e){
+        e.preventDefault();//阻止默认事件
+        if(!lock){
+            return;     //如果状态是锁的，返回
+        }
+        var xhr=new XMLHttpRequest();
+        console.log(1);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200||xhr==304){
+                    var res=JSON.parse(xhr.responseText);
+                    var fragment=document.createDocumentFragment();
+                    for(var i=0;i<res.length;i++){
+                        var lis=document.createElement("li");
+                        lis.innerText=res[i];
+                        fragment.appendChild(lis);
+                    }
+                    wrap.appendChild(fragment);
+                    pageIndex=pageIndex+5;
+                }else{
+                    console.log("出错了");
+                }
+                lock=true;  //返回数据的时候
+            }
+        };
+        xhr.open('get','/loadMore?index='+pageIndex+'&length=5',true);
+        xhr.send();
+        lock=true;
+    });*/
+  /*jquery方法*/
+      var pageIndex=0;
+     /*$("#btn").on('click',function() {
+         $.ajax({
+             url: '/loadMore',
+             data: {
+                 page: pageIndex,
+                 length: 5
+             },
+             type: 'get',
+             dataType: 'json',
+             success: function (ret) {
+                 pageIndex=pageIndex+5;
+                  appendHtml(ret.data);
+             },
+             error: function () {
+                 alert("获取数据异常")
+             }
+         });
+     });
+ */
+ $("#btn").on('click',function() {
+     $.get('/loadMore').done(function(ret){
+            if(ret.status===0){
+               console.log(ret.data);
+                alert("ret.data")
+//                appendHtml(ret.data);
+            }else{
+                alert("获取数据异常")
+            }
+     }).fail(function(){
+         alert("系统异常")
+     })
+ });
+       function  appendHtml(ret){
+           var html='';
+           for(var i=0;i<ret.length;i++){
+                var i;
+               html+='<li>'+ret[i]+'</li>';
+               console.log(ret[i]);
+           }
+//           $.each(ret,function(){
+//               html+='<li>'+this+'</li>';
+//               console.log(this)
+//           });
+           $('.wrap').append(html);
+       }
+</script>
+</html>
