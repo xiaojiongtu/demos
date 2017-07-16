@@ -124,11 +124,11 @@
             var index=$(this).index();
             slider(index);
         });
-        /*向前翻*/
+        /*鍚戝墠婊氬姩*/
         function nextPlay(){
             slider((pageIndex+1)%imgCount);
         }
-        /*向后翻*/
+        /*鍚戝悗婊氬姩*/
         function prePlay(){
             slider((pageIndex+imgCount-1)%imgCount);
         }
@@ -145,7 +145,7 @@
         function setDot(){
             $dots.removeClass('on').eq(pageIndex).addClass('on');
         }
-        /*自动轮播*/
+        /*鑷姩杞挱*/
        function autoPlay(){
            setInterval(function(){
                nextPlay(1)
