@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul li {list-style: none}
+        a{text-decoration: none}
+        .container{
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slider{
+            position: absolute;
+            overflow: hidden;
+            width: 400px;
+            height: 300px;
+        }
+        .slider>li{
+            float: left;
+        }
+        .slider >li img{
+            width: 400px;
+            height: 300px;
+        }
+        .arrow{
+            display: inline-block;
+            position: absolute;
+            top:50%;
+            margin-top: -18px;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            font-family: SimSun-ExtB;
+            color: #fff;
+            background:#ddd;
+        }
+        .arrow:hover{
+            background: rgba(0,0,0,0.5);
+        }
+        .pre{left: 10px;}
+        .next{right: 10px;}
+        .dot{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 20px;
+        }
+        .dot>li{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 5px;
+            z-index: 99;
+        }
+        .dot .on{
+            background: rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul  class="slider">
+        <li>
+            <a href="javascript:;">
+                <img src="https://muse-img.b0.upaiyun.com/d4abe26825f61e664355999e6174ea8c07b3fe124a96d-z88hbdhlrf6r_/both/280x280" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="https://muse-img.b0.upaiyun.com/64b88eb8ac045037623d91a8d51c9e3ecca7386b27bd52-oopugpop3nmi_/both/280x280" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="https://muse-img.b0.upaiyun.com/c9a0b09e9f89a516c6cbef09a9f1f2132485866a261b6b-vhoc85lsdcxr_/both/280x280" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="https://muse-img.b0.upaiyun.com/ab880e3824a0f61f3543f2576efbe37fbf19bcac14dc52-hxvosuqpk3xr_/both/280x280" alt="">
+            </a>
+        </li>
+    </ul>
+    <a href="javascript:;" class="pre arrow">&lt;</a>
+    <a href="javascript:;" class="next arrow">&gt;</a>
+    <ul class="dot">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="//apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+    $(function(){
+        var $imgs=$('.slider').children();
+        var $next=$('.next');
+        var $pre=$('.pre');
+        var $dots=$('.dot>li');
+        var imgCount=$imgs.children().size();
+        var imgWidth=$imgs.width();
+        var pageIndex=0;
+        var lock=false;
+        $next.on('click',function(){
+            nextPlay();
+        });
+        $pre.on('click',function(){
+            prePlay();
+        });
+        $dots.on('click',function(){
+            var index=$(this).index();
+            slider(index);
+        });
+        /*向前翻*/
+        function nextPlay(){
+            slider((pageIndex+1)%imgCount);
+        }
+        /*向后翻*/
+        function prePlay(){
+            slider((pageIndex+imgCount-1)%imgCount);
+        }
+        function slider(index){
+            if(lock) return;
+            lock=true;
+            $imgs.eq(pageIndex).fadeOut(1000);
+            $imgs.eq(index).fadeIn(1000,function(){
+                lock=false;
+            });
+            pageIndex=index;
+            setDot();
+        }
+        function setDot(){
+            $dots.removeClass('on').eq(pageIndex).addClass('on');
+        }
+        /*自动轮播*/
+       function autoPlay(){
+           setInterval(function(){
+               nextPlay(1)
+           },2000)
+        }
+        slider(0);
+        autoPlay();
+    })
+
+</script>
+</body>
+</html>
