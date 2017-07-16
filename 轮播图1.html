@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul li {list-style: none}
+        a{text-decoration: none}
+        .container{
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slider{
+            position: absolute;
+            overflow: hidden;
+        }
+        .slider>li{
+            float: left;
+        }
+        .slider >li img{
+            width: 400px;
+            height: 300px;
+        }
+        .arrow{
+            display: inline-block;
+            position: absolute;
+            top:50%;
+            margin-top: -18px;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            font-family: SimSun-ExtB;
+            color: #fff;
+            background:#ddd;
+        }
+        .arrow:hover{
+            background: rgba(0,0,0,0.5);
+        }
+        .pre{left: 10px;}
+        .next{right: 10px;}
+        .dot{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 20px;
+        }
+        .dot>li{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 5px;
+            z-index: 99;
+        }
+        .dot .on{
+            background: rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <ul  class="slider">
+           <li>
+               <a href="javascript:;">
+                   <img src="https://muse-img.b0.upaiyun.com/7952a118f5a01a7b2aa9c7571e8d2989e28f332f1896f5-r2wvyimjkyb9_/both/280x280" alt="">
+               </a>
+           </li>
+           <li>
+               <a href="javascript:;">
+                   <img src="https://hbimg.b0.upaiyun.com/c5ac5d2f39e2e7bbeebc5f365aeaa7b6677eeedc113d1-FMGtu3_sq320" alt="">
+               </a>
+           </li>
+           <li>
+               <a href="javascript:;">
+                   <img src="https://muse-img.b0.upaiyun.com/40a89da8b6791d6c3f4339cca895c948369e2eb4a46a0-vse6w5zjv2t9_/both/280x280" alt="">
+               </a>
+           </li>
+           <li>
+               <a href="javascript:;">
+                   <img src="https://muse-img.b0.upaiyun.com/ab880e3824a0f61f3543f2576efbe37fbf19bcac14dc52-hxvosuqpk3xr_/both/280x280" alt="">
+               </a>
+           </li>
+       </ul>
+       <a href="javascript:;" class="pre arrow">&lt;</a>
+       <a href="javascript:;" class="next arrow">&gt;</a>
+       <ul class="dot">
+           <li class="on"></li>
+           <li></li>
+           <li></li>
+           <li></li>
+       </ul>
+   </div>
+   <script src="//apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+   <script>
+       $(function(){
+           var $ct=$('.container');
+           var $slider=$('.slider');
+           var $imgs=$('.slider>li');
+           var $next=$('.next');
+           var $pre=$('.pre');
+           var $dots=$('.dot>li');
+           var pageIndex=0;
+           var lock=false;
+           var imgCount=$imgs.size();
+           var imgWidth=$imgs.width();
+           $slider.append($imgs.first().clone());
+           $slider.prepend($imgs.last().clone());
+           $slider.width((imgCount+2)*imgWidth);
+           $slider.css({left:-imgWidth});
+           $next.on('click',function(){
+               nextPlay(1);
+           });
+           $pre.on('click',function(){
+               prePlay(1);
+           });
+           $dots.on('click',function(){
+               var index=$(this).index();
+               if(index>pageIndex){
+                   nextPlay(index-pageIndex)
+               }else if(index<pageIndex){
+                   prePlay(pageIndex-index)
+               }
+           });
+           /*向前翻*/
+           function nextPlay(len){
+               if(lock) { lock=true;}
+               $slider.animate({
+                   left:'-='+len*imgWidth
+               }, function(){
+                   pageIndex+=len;
+                   if (pageIndex===imgCount){//如果到了最后一个，就把下标重置为0，并且包裹图片的父容器偏移
+                       pageIndex=0;
+                       $slider.css({left:-imgWidth});
+                   }
+                   setDot();
+                   lock=false;
+               });
+           }
+           /*向后翻*/
+           function prePlay(len){
+               $slider.animate({
+                   left:'+='+imgWidth*len
+               },function(){
+                   pageIndex-=len;
+                   if(pageIndex<0){
+                       pageIndex=imgCount-1;
+                       $slider.css({left:-imgWidth*imgCount});
+                   }
+                   setDot();
+               })
+           }
+           function setDot(){
+               $dots.removeClass('on').eq(pageIndex).addClass('on');
+           }
+            /*自动轮播*/
+           setInterval(function(){
+               nextPlay(1)
+           },2000)
+       })
+
+   </script>
+</body>
+</html>
