@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<style>
+   .item-wrap{
+     position:relative;
+   }
+    .item-list{
+        position: absolute;
+        width: 200px;
+        margin: 10px 10px 0 0;
+        transition: all 2s;
+    }
+    .div1{
+        height: 400px;
+        background: #00ff00;
+    }
+    .div2{
+        height: 500px;
+        background: #ff0000;
+    }
+    .div3{
+        height: 300px;
+        background: #6A6AFF;
+    }
+</style>
+<body>
+<div class="item-wrap">
+    <div class="item-list div1">1</div>
+    <div class="item-list div2">2</div>
+    <div class="item-list div3">3</div>
+    <div class="item-list div1">4</div>
+    <div class="item-list div2">5</div>
+    <div class="item-list div3">6</div>
+    <div class="item-list div1">7</div>
+    <div class="item-list div2">8</div>
+    <div class="item-list div3">9</div>
+    <div class="item-list div2">5</div>
+    <div class="item-list div1">7</div>
+    <div class="item-list div2">8</div>
+    <div class="item-list div3">9</div>
+    <div class="item-list div3">6</div>
+    <div class="item-list div1">7</div>
+</div>
+<script src="//apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+          waterFull();
+         $(window).resize(function(){
+             waterFull();
+         });
+        function  waterFull(){
+           var columnCount=parseInt($('.item-wrap').width()/$('.item-list').width());
+           var arrItem=[];
+           for(var i=0;i<columnCount;i++){
+                arrItem[i]=0;
+           }
+            var $itemList=$('.item-list');
+            $.each($itemList,function(){
+                var minHeight=Math.min.apply(null,arrItem);
+                var minIndex=arrItem.indexOf(minHeight);
+                 $(this).css({
+                     top:arrItem[minIndex],
+                     left: $(this).outerWidth(true)*minIndex
+                });
+                arrItem[minIndex]=$(this).outerHeight(true)+arrItem[minIndex];
+            })
+    }
+
+</script>
+</body>
+</html>
