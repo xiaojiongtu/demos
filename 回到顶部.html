@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="ct">
+    <p>顶部1</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>顶部</p>
+    <p>底部部</p>
+</div>
+
+<script src="//apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+
+function GoTop($ct){
+    this.$ct=$ct;
+    this.$target=$('<div class="btn">回到顶部</div>');
+    this.$target.css({
+         position:'fixed',
+         right:20+'px',
+        bottom:30+'px',
+        fontSize:18+'px',
+        height:20+'px',
+        lineHeight:20+'px',
+        background:'#4caf50',
+        color:'#fff'
+    });
+    this.createNode();
+    this.bindEvent();
+}
+    GoTop.prototype.createNode=function(){
+           this.$ct.append(this.$target);
+
+    };
+   GoTop.prototype.bindEvent=function(){
+        $(window).scroll(function(e){
+            if($(window).scrollTop()>1){
+                $('.btn').fadeIn(500);
+            }else{
+                $('.btn').fadeOut(500);
+            }
+        });
+        $('.btn').click(function(){
+            $('html,body').animate({scrollTop:0},'slow');
+        });
+   };
+  var go1=new GoTop($(".ct"));
+
+
+</script>
+</body>
+</html>
