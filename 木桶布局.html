@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            margin: 0 auto;
+            width: 1000px;
+        }
+
+        .img-wrap {
+            margin-top: 6px;
+        }
+
+        .img-box {
+            float: left;
+        }
+
+        .img-wrap:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+ <div class="wrap">
+
+ </div>
+<script src="//apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+     function Barrel($ct){
+          this.$ct=$ct;
+          this.rowList=[];
+          this.loadImg();
+     }
+     Barrel.prototype={
+         loadImg:function(){
+             var _this=this;
+             var imgUrls=this.getUrls(50);
+             $.each(imgUrls,function(index,imgs){
+                  var img= new Image();
+                  img.src=imgUrls[index];
+                 img.onload=function(){
+                     var scale=img.width/img.height;
+                     var imgInfo={
+                         target:$(img),
+                         width: 100*scale,
+                         height: 100
+                     };
+                     console.log(img.width);
+                     _this.render(imgInfo);
+                 }
+             });
+         },
+         getUrls:function(n){
+               var width,height,urls=[];
+               for(var i=0;i<n;i++){
+                     width=Math.floor(Math.random()*100+200);
+                     height=Math.floor(Math.random()*200+100);
+                     var random=Math.floor(Math.random()*300);
+                     urls.push('https://unsplash.it/'+width+'/'+height+'/?random');
+              }
+             return urls;
+            /* var color, width, height, urls = [];
+             for (var i = 0; i < n; i++) {
+                 color = Math.random().toString(16).substring(2, 8);
+                 width = Math.floor(Math.random() * 100 + 50);
+                 height = Math.floor(Math.random() * 30 + 50);
+                 urls.push("http://placehold.it/" + width + "x" + height + "/" + color + "/fff");
+             }
+             return urls;*/
+         },
+         render:function(imgInfo){
+             var self=this;
+            var viewWidth=this.$ct.width();
+             var rowWidth=0;
+             var rowHeight=0;
+             var lastImgInfo=imgInfo;
+             this.rowList.push(imgInfo);
+             $.each(this.rowList,function(index,imgInfo){
+                 rowWidth += imgInfo.width;
+                 //如果图片比容器大，把前面的图片等比放大，把最后一张图片放到下一行
+                 if(rowWidth > viewWidth){
+                     self.rowList.pop();
+                     rowWidth = rowWidth - lastImgInfo.width;
+                     rowHeight=viewWidth*100/rowWidth;
+                     self.appendHtml(rowHeight);
+                     //把之前的数组清空，并把最后一张图片放到数组中
+                     self.rowList=[];
+                     _this.rowList.push(lastImgInfo);
+                 }
+             });
+         },
+         appendHtml:function(rowHeight){
+             var $rowWrap=$('<div class="img-wrap"></div>');
+             $.each(this.rowList,function(index,imgInfo){
+                 var $imgBox=$('<div class="img-box"></div>');
+                 var $img=imgInfo.target;
+                 $img.height(rowHeight);
+                 $imgBox.append($img);
+                 $rowWrap.append($imgBox);
+             });
+             this.$ct.append($rowWrap);
+         }
+     };
+
+    var b1=new Barrel($(".wrap"));
+
+</script>
+</body>
+</html>
