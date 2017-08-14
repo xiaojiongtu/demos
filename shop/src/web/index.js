@@ -5,5 +5,7 @@
 requirejs(['jquery','src/js/GoTop','src/js/Slider','src/js/WaterFall'],function($,GoTop,Slider,WaterFall){
                 new GoTop($('body'));
                 new Slider($('.container1'));
-                fall();
+                  var fall=new WaterFall();
+
+
 });

@@ -9,4 +9,4 @@ require.config({
 });
 
 //加载入口模板
-requirejs(['src/web/index']);
+requirejs(['./src/web/index']);
