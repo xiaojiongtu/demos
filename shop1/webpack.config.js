@@ -7,7 +7,6 @@ var webpack = require('webpack'); //访问内置的插件
        output: {
            path: __dirname + "/dist",
            filename: 'index.js'
-<<<<<<< HEAD
        },
        plugins:[
            new webpack.ProvidePlugin({
@@ -17,7 +16,5 @@ var webpack = require('webpack'); //访问内置的插件
            })
        ]
 }
-=======
-       }
-}
->>>>>>> 687da29def596394a3f33f169880f1634ad15b8f
+       
+
