@@ -1,7 +1,6 @@
 /**
  * Created by lull on 2017/8/19.
  */
-var $=require('../lib/jquery-1.8.3.min.js');
 var Slider= function ($ct){
             this.$ct=$ct;
             this.init();
@@ -16,7 +15,7 @@ var Slider= function ($ct){
 
             this.pageIndex=0;
             this.lock=false;
-            this.imgCount=$imgs.size();
+            this.imgCount=$imgs.length;
             this.imgWidth=$imgs.width();
             $slider.append($imgs.first().clone());
             $slider.prepend($imgs.last().clone());

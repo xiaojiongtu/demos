@@ -1,7 +1,6 @@
 /**
  * Created by lull on 2017/8/13.
  */
-var $=require('../lib/jquery-1.8.3.min.js');
  var WaterFall=function() {
      /*获取数据,并把数据填充到页面*/
      var currentPage = 1;
@@ -90,7 +89,6 @@ var $=require('../lib/jquery-1.8.3.min.js');
      /*加载更多*/
      function more() {
          getData(function (newList) {
-             console.log(newList);
              $("#add").on('click', function () {
                  $.each(newList, function (index, news) {
                      var $node = renderData(news);

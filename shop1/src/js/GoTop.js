@@ -1,7 +1,6 @@
 /**
  * Created by lull on 2017/8/19.
  */
-     var $=require('../lib/jquery-1.8.3.min.js');
      var GoTop=function ($ct){
         this.$ct=$ct;
         this.$target=$('<div class="btn">回到顶部</div>');
